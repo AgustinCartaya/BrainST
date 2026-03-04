@@ -7,8 +7,6 @@
 *.jpeg
 *.gif
 *.mp4
-*.nii.gz
-*.nii
 *.npy
 *.npz
 *.zip
