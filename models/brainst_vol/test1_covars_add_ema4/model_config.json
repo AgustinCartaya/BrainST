@@ -1,0 +1,110 @@
+{
+    "args_train": {
+
+        "model_name": "test1_covars_add_ema4",
+        "model_best_chk_path_name": "/home/agustin/phd/synthesis/final_code/models/brainst_vol/test1_covars_add_ema4/check_points/model_2000.pt",
+
+
+
+
+
+        "output_path": "/home/agustin/phd/synthesis/tests/data_inputation/diffusion_model_1D/models/test1/covars_add_ema4",
+        "checkpoints_dir_name": "check_points",
+        "logs_dir_name": "logs",
+        "val_imgs_dir_name": "val_imgs",
+        "training_dataset_path_name": "/home/agustin/phd/synthesis/data_analysers/results/aaco5590_dataset_zscore/training_df/dataset_normalized_individually_zscore.csv",
+        "conditions_keys_ordered": [
+            "total_vol",
+            "surrounding_csf_vol",
+            "cortical_gm_vol",
+            "cerebral_wm_vol",
+            "lateral_ventricles_vol",
+            "third_ventricle_vol",
+            "fourth_ventricle_vol",
+            "thalamus_vol",
+            "hippocampus_vol",
+            "amygdala_vol",
+            "putamen_vol",
+            "pallidum_vol",
+            "caudate_vol",
+            "accumbens_area_vol",
+            "ventral_dc_vol",
+            "cerebellum_gm_vol",
+            "cerebellum_wm_vol",
+            "brainstem_vol"
+        ],
+        "covars_list": [
+            "age",
+            "sex",
+            "dx"
+        ],
+        "covars_conditioning_type": "add",
+        "merge_conditioning_with": "x",
+        "dataset_filters": null,
+        "augmentation_std": 0.0,
+        "max_timepoints_per_epoch": 3,
+        "max_train_steps": 50000,
+        "save_checkpoint_interval": 250,
+        "amp": false,
+        "batch_size": 2048,
+        "gradient_accumulation_steps": 1,
+        "use_ema": true,
+        "ema_params": {
+            "decay": 0.999,
+            "warm_up_steps": 1000,
+            "warm_up_decay": 0.5
+        },
+        "lr": 0.0001,
+        "lr_scheduler": {
+            "name": "WarmupCosineLR",
+            "warmup_start_factor": 0.01,
+            "warmup_steps": 100,
+            "eta_min": 1e-06
+        },
+        "load_pretrained_model_from": null,
+        "resume_from_checkpoint_path_name": null,
+        "seed": 42,
+        "val_interval": 2500,
+        "val_evaluation_initial_step": 20000,
+        "initial_val": true,
+        "val_seeds": [
+            42,
+            10
+        ],
+        "free_guidance_ratio": 3.0,
+        "free_guidance_threshold": 0.2,
+        "normalizer_params": "/home/agustin/phd/synthesis/data_analysers/results/aaco5590_dataset_zscore/training_df/zscore_standardizer_params.json",
+        "noise_scheduler_type": "ddim"
+    },
+    "networks_config": {
+        "diffusion_mlp": {
+            "d_in": 18,
+            "dim_t": 512,
+            "conditioning_type": "add",
+            "num_heads": 4,
+            "merge_conditioning_with": "x"
+        },
+        "conditions_mlp": {
+            "covar_dimension": 5,
+            "dim_t": 512,
+            "covar_embed_dim": 128,
+            "conditioning_type": "add"
+        },
+        "noise_scheduler": {
+            "_target_": "monai.networks.schedulers.DDIMScheduler",
+            "beta_start": 0.0015,
+            "beta_end": 0.0205,
+            "num_train_timesteps": 1000,
+            "schedule": "scaled_linear_beta",
+            "clip_sample": false
+        },
+        "noise_scheduler_rf": {
+            "_target_": "monai.networks.schedulers.rectified_flow.RFlowScheduler",
+            "num_train_timesteps": 1000,
+            "use_discrete_timesteps": false,
+            "use_timestep_transform": true,
+            "sample_method": "uniform",
+            "scale": 1.4
+        }
+    }
+}

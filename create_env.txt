@@ -1,0 +1,4 @@
+conda create --name BrainST python=3.11
+conda deactivate
+conda activate BrainST
+pip install torch torchvision monai tensorboard ipykernel tqdm matplotlib opencv-python pandas nibabel scikit-image scikit-learn SimpleITK ipympl

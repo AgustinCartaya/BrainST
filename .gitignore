@@ -1,0 +1,28 @@
+./generation_res.py
+./tests.ipynb
+
+# Ignorar imágenes y datos volumétricos
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.nii.gz
+*.nii
+*.npy
+*.npz
+*.zip
+*.lta
+*.git
+
+# Ignorar archivos de modelos y pesos
+*.safetensors
+*.pkl
+*.bin
+*.pt
+*.h5
+*.pth
+*.ckpt
+*events.out.tfevents*
+# visual studio
+*.pyc

@@ -1,0 +1,679 @@
+{
+    
+    "args_train": {
+
+        "model_name": "cond18_masked",
+        "autoencoder_chk_path_name":"/home/agustin/phd/synthesis/final_code/models/brainst_img/autoencoder/weights/autoencoder_epoch273.pt",
+        "model_best_chk_path_name": "/home/agustin/phd/synthesis/final_code/models/brainst_img/cond18_masked/check_points/model_200000.pt",
+
+
+
+
+        "output_path": "/home/agustin/phd/synthesis/tests/D3/maisi/understanding_training/conditioned_aaco5590_zscore/models/self23_cross0123/mask_att_all_conditions_mask_weight05_cmgelu",
+        "checkpoints_dir_name": "check_points",
+        "logs_dir_name": "logs",
+        "val_imgs_dir_name": "val_imgs",
+        "training_dataset_path_name": "/home/agustin/phd/synthesis/data_analysers/results/aaco5590_dataset_zscore/training_df/dataset_normalized_individually_zscore.csv",
+        "latents_path": "/home/agustin/phd/synthesis/tests/D3/maisi/understanding_vae/outputs_stage2_all_data_complete_image",
+        "conditions_keys_ordered": [
+            "total_vol",
+            "surrounding_csf_vol",
+            "cortical_gm_vol",
+            "cerebral_wm_vol",
+            "lateral_ventricles_vol",
+            "third_ventricle_vol",
+            "fourth_ventricle_vol",
+            "thalamus_vol",
+            "hippocampus_vol",
+            "amygdala_vol",
+            "putamen_vol",
+            "pallidum_vol",
+            "caudate_vol",
+            "accumbens_area_vol",
+            "ventral_dc_vol",
+            "cerebellum_gm_vol",
+            "cerebellum_wm_vol",
+            "brainstem_vol"
+        ],
+        "dataset_filters": null,
+        "use_skback": false,
+        "condition_noise_std": 0.01,
+        "max_timepoints_per_epoch": 3,
+        "max_train_steps": 500000,
+        "save_checkpoint_interval": 50000,
+        "amp": true,
+        "batch_size": 3,
+        "gradient_accumulation_steps": 4,
+        "use_ema": true,
+        "ema_params": {
+            "decay": 0.999,
+            "warm_up_steps": 2000,
+            "warm_up_decay": 0.5
+        },
+        "lr": 0.0001,
+        "lr_scheduler": {
+            "name": "WarmupCosineLR",
+            "warmup_start_factor": 0.01,
+            "warmup_steps": 100,
+            "eta_min": 1e-06
+        },
+        "load_pretrained_model_from": null,
+        "resume_from_checkpoint_path_name": null,
+        "seed": 42,
+        "val_interval": 2500,
+        "val_evaluation_initial_step": 20000,
+        "initial_val": true,
+        "val_seeds": [
+            42,
+            10
+        ],
+        "val_expected_conditions_list": [
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": -3.0,
+                "surrounding_csf_vol": 3.0,
+                "cortical_gm_vol": -3.0,
+                "cerebral_wm_vol": -3.0,
+                "lateral_ventricles_vol": 3.0,
+                "fourth_ventricle_vol": 3.0,
+                "cerebellum_gm_vol": -3.0,
+                "cerebellum_wm_vol": -3.0,
+                "brainstem_vol": -3.0
+            },
+            {
+                "total_vol": -3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": 3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": -3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": -3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": 3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": 3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": -3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": -3.0,
+                "brainstem_vol": 3.0
+            },
+            {
+                "total_vol": 3.0,
+                "surrounding_csf_vol": -3.0,
+                "cortical_gm_vol": 3.0,
+                "cerebral_wm_vol": 3.0,
+                "lateral_ventricles_vol": -3.0,
+                "fourth_ventricle_vol": -3.0,
+                "cerebellum_gm_vol": 3.0,
+                "cerebellum_wm_vol": 3.0,
+                "brainstem_vol": -3.0
+            }
+        ],
+        "save_val_att_masks": true,
+        "use_conditions_self_attention": false,
+        "cm_use_gelu": true,
+        "free_guidance_ratio": 3.0,
+        "free_guidance_threshold": 0.2,
+        "loss_weights": {
+            "noise": 1.0,
+            "att_mask": 0.5
+        },
+        "att_mask_path": "/home/agustin/phd/synthesis/data/3D/usrl/masks/att_masks",
+        "att_mask_resolution_list": [
+            [
+                48,
+                64,
+                48
+            ],
+            [
+                24,
+                32,
+                24
+            ],
+            [
+                12,
+                16,
+                12
+            ],
+            [
+                6,
+                8,
+                6
+            ]
+        ],
+        "att_mask_structure_mapping": {
+            "total_vol": "total",
+            "surrounding_csf_vol": "surrounding_csf",
+            "cortical_gm_vol": "cortical_gm",
+            "cerebral_wm_vol": "cerebral_wm",
+            "lateral_ventricles_vol": [
+                "lateral_ventricles",
+                "inferior_lateral_ventricles"
+            ],
+            "third_ventricle_vol": "third_ventricle",
+            "fourth_ventricle_vol": "fourth_ventricle",
+            "thalamus_vol": "thalamus",
+            "hippocampus_vol": "hippocampus",
+            "amygdala_vol": "amygdala",
+            "putamen_vol": "putamen",
+            "pallidum_vol": "pallidum",
+            "caudate_vol": "caudate",
+            "accumbens_area_vol": "accumbens",
+            "ventral_dc_vol": "ventral_dc",
+            "cerebellum_gm_vol": "cerebellum_gm",
+            "cerebellum_wm_vol": "cerebellum_wm",
+            "brainstem_vol": "brainstem"
+        },
+        "att_mask_weights": {
+            "total_vol": 1.0,
+            "surrounding_csf_vol": 4.5,
+            "cortical_gm_vol": 4.0,
+            "cerebral_wm_vol": 4.0,
+            "lateral_ventricles_vol": 4.0,
+            "third_ventricle_vol": 4.0,
+            "fourth_ventricle_vol": 4.0,
+            "thalamus_vol": 4.0,
+            "hippocampus_vol": 4.0,
+            "amygdala_vol": 4.0,
+            "putamen_vol": 4.0,
+            "pallidum_vol": 4.0,
+            "caudate_vol": 4.0,
+            "accumbens_area_vol": 4.0,
+            "ventral_dc_vol": 4.0,
+            "cerebellum_gm_vol": 4.0,
+            "cerebellum_wm_vol": 4.0,
+            "brainstem_vol": 4.0
+        },
+        "path_name_ref_img": "/home/agustin/phd/synthesis/tests/D3/maisi/understanding_vae/outputs_stage2_all_data_complete_image/ADNI002S0295/m000/ADNI002S0295_m000_synthsr_reconstructed.nii.gz",
+        "normalizer_params": "/home/agustin/phd/synthesis/data_analysers/results/aaco5590_dataset_zscore/training_df/zscore_standardizer_params.json",
+        "patience": 100,
+        "jensen_shannon_stats": null,
+        "mean_histogram_path": null,
+        "noise_scheduler_type": "ddim",
+        "val_conditions_list": [
+            {
+                "total_vol": 1.3237188831377833,
+                "surrounding_csf_vol": -2.2100444276552103,
+                "cortical_gm_vol": 1.1008847833018,
+                "cerebral_wm_vol": 1.4950868211122943,
+                "lateral_ventricles_vol": -1.3623038131065726,
+                "third_ventricle_vol": -1.7601213375590126,
+                "fourth_ventricle_vol": -1.004445205857371,
+                "thalamus_vol": 3.3812055652667583,
+                "hippocampus_vol": 1.6540045747487313,
+                "amygdala_vol": 0.8316042030455042,
+                "putamen_vol": 1.8512112520649515,
+                "pallidum_vol": 3.198185111136836,
+                "caudate_vol": 2.908163345775354,
+                "accumbens_area_vol": 2.650003437603182,
+                "ventral_dc_vol": 2.757290149351517,
+                "cerebellum_gm_vol": 1.8992301465173669,
+                "cerebellum_wm_vol": 1.4760016276860066,
+                "brainstem_vol": 1.1451038597451435
+            },
+            {
+                "total_vol": -0.6598211530841976,
+                "surrounding_csf_vol": 1.8767679468804983,
+                "cortical_gm_vol": -1.4110699636829789,
+                "cerebral_wm_vol": -3.2645312315171395,
+                "lateral_ventricles_vol": 2.9379035212430944,
+                "third_ventricle_vol": 1.8427371471266776,
+                "fourth_ventricle_vol": 1.493407224905,
+                "thalamus_vol": -1.705173884173528,
+                "hippocampus_vol": -2.152437236940268,
+                "amygdala_vol": -2.8673442279341725,
+                "putamen_vol": -2.6852541250157804,
+                "pallidum_vol": -2.2505313259427067,
+                "caudate_vol": -2.439062105988357,
+                "accumbens_area_vol": -1.6539372946595292,
+                "ventral_dc_vol": -2.496069403790348,
+                "cerebellum_gm_vol": -1.25778900904185,
+                "cerebellum_wm_vol": -1.8018048635725736,
+                "brainstem_vol": -2.33259981485857
+            },
+            {
+                "total_vol": 0.2390950274858817,
+                "surrounding_csf_vol": -2.464022002492056,
+                "cortical_gm_vol": 1.2056008893512913,
+                "cerebral_wm_vol": 1.5888534313629774,
+                "lateral_ventricles_vol": -1.4391775900695012,
+                "third_ventricle_vol": -1.728205592999483,
+                "fourth_ventricle_vol": -1.0080576046152083,
+                "thalamus_vol": 3.362864958390334,
+                "hippocampus_vol": 1.590363732472686,
+                "amygdala_vol": 0.9351498333603708,
+                "putamen_vol": 1.8375568764963628,
+                "pallidum_vol": 2.84358744561821,
+                "caudate_vol": 3.2585639646076365,
+                "accumbens_area_vol": 3.326852288399537,
+                "ventral_dc_vol": 3.200612981797025,
+                "cerebellum_gm_vol": 2.1408142127403207,
+                "cerebellum_wm_vol": 1.7549606955090995,
+                "brainstem_vol": 1.341193501851065
+            },
+            {
+                "total_vol": 1.520605431994139,
+                "surrounding_csf_vol": -0.9493343169692238,
+                "cortical_gm_vol": 0.6195668571774215,
+                "cerebral_wm_vol": 1.117883049192345,
+                "lateral_ventricles_vol": -1.6057097319137368,
+                "third_ventricle_vol": -1.8730401248671384,
+                "fourth_ventricle_vol": -1.2838890791623536,
+                "thalamus_vol": 1.7862518034908876,
+                "hippocampus_vol": 0.7199626414986643,
+                "amygdala_vol": 0.0726693868833051,
+                "putamen_vol": 1.2781494568114178,
+                "pallidum_vol": 1.016617591320103,
+                "caudate_vol": 0.9803517149005246,
+                "accumbens_area_vol": 3.221467698349058,
+                "ventral_dc_vol": 1.6711273826862294,
+                "cerebellum_gm_vol": 1.5424686587501784,
+                "cerebellum_wm_vol": 1.951796828338383,
+                "brainstem_vol": 2.3891026339673243
+            },
+            {
+                "total_vol": 0.2424632549260912,
+                "surrounding_csf_vol": -1.6290018130894632,
+                "cortical_gm_vol": -0.7018631260921556,
+                "cerebral_wm_vol": 1.6625429724703842,
+                "lateral_ventricles_vol": -0.6186262081933693,
+                "third_ventricle_vol": -1.017295587795229,
+                "fourth_ventricle_vol": -1.44770574613494,
+                "thalamus_vol": 2.4259118209930524,
+                "hippocampus_vol": 1.8100194050312,
+                "amygdala_vol": 1.277223187982285,
+                "putamen_vol": 1.5982603118727308,
+                "pallidum_vol": 2.6609187033235715,
+                "caudate_vol": 0.1509434525626714,
+                "accumbens_area_vol": 0.693010274082859,
+                "ventral_dc_vol": 2.706064650180524,
+                "cerebellum_gm_vol": 1.021377345386933,
+                "cerebellum_wm_vol": 2.3741540833475505,
+                "brainstem_vol": 2.2396503296977133
+            },
+            {
+                "total_vol": 0.6615435750274035,
+                "surrounding_csf_vol": -1.394159270656207,
+                "cortical_gm_vol": 1.5352116115691408,
+                "cerebral_wm_vol": 0.0020901047220631,
+                "lateral_ventricles_vol": -1.5102016296011584,
+                "third_ventricle_vol": -1.675299541798334,
+                "fourth_ventricle_vol": -0.1831500924273871,
+                "thalamus_vol": 2.0207368382006075,
+                "hippocampus_vol": 0.4692997120609525,
+                "amygdala_vol": 0.751726841396016,
+                "putamen_vol": 2.370078834967979,
+                "pallidum_vol": 1.0352093057451912,
+                "caudate_vol": 2.2777611018055173,
+                "accumbens_area_vol": 2.5320956074497487,
+                "ventral_dc_vol": 2.0631458391836595,
+                "cerebellum_gm_vol": 2.509870271736237,
+                "cerebellum_wm_vol": 2.759394502783037,
+                "brainstem_vol": 1.8808796870212856
+            },
+            {
+                "total_vol": 0.5343156109615432,
+                "surrounding_csf_vol": -2.377018129708719,
+                "cortical_gm_vol": 0.2637691011387694,
+                "cerebral_wm_vol": 1.2215050269689651,
+                "lateral_ventricles_vol": -0.5191383583615152,
+                "third_ventricle_vol": -0.2746284327088591,
+                "fourth_ventricle_vol": -0.770474182889368,
+                "thalamus_vol": 0.8932428389898074,
+                "hippocampus_vol": 0.3818200785839346,
+                "amygdala_vol": 0.7268523275779046,
+                "putamen_vol": 0.0870021473032527,
+                "pallidum_vol": 1.052316086185448,
+                "caudate_vol": 1.1540597529722176,
+                "accumbens_area_vol": 0.7456255335747334,
+                "ventral_dc_vol": 1.544254711135174,
+                "cerebellum_gm_vol": 2.3695541535682696,
+                "cerebellum_wm_vol": 2.628497397569519,
+                "brainstem_vol": 1.7323912829509929
+            },
+            {
+                "total_vol": 0.8921123982858541,
+                "surrounding_csf_vol": -2.9170343387805,
+                "cortical_gm_vol": 0.9915677578981708,
+                "cerebral_wm_vol": 2.454980425415263,
+                "lateral_ventricles_vol": -1.4624527706220227,
+                "third_ventricle_vol": -1.877240541183253,
+                "fourth_ventricle_vol": 0.3902961888894986,
+                "thalamus_vol": 1.671064115697426,
+                "hippocampus_vol": 0.3971805948289633,
+                "amygdala_vol": 0.0617858191668708,
+                "putamen_vol": -0.4033376328445118,
+                "pallidum_vol": 0.9296369086492972,
+                "caudate_vol": 0.5739593565260106,
+                "accumbens_area_vol": 1.5943644197442104,
+                "ventral_dc_vol": 1.6094700230217625,
+                "cerebellum_gm_vol": 2.8251037212921606,
+                "cerebellum_wm_vol": 2.310804400290157,
+                "brainstem_vol": 1.424529627336092
+            },
+            {
+                "total_vol": 1.1760266615432988,
+                "surrounding_csf_vol": -1.3986549917737257,
+                "cortical_gm_vol": 1.030370678965112,
+                "cerebral_wm_vol": 1.8371309398819984,
+                "lateral_ventricles_vol": -1.2907881585873957,
+                "third_ventricle_vol": -1.7535813806971496,
+                "fourth_ventricle_vol": -1.2825405749069991,
+                "thalamus_vol": 2.22501721254608,
+                "hippocampus_vol": 1.545978601391229,
+                "amygdala_vol": 0.5933891471815869,
+                "putamen_vol": 0.8974820801943743,
+                "pallidum_vol": 0.4741103349791716,
+                "caudate_vol": 0.8014139554895934,
+                "accumbens_area_vol": 1.7358944168129482,
+                "ventral_dc_vol": 1.532168538534437,
+                "cerebellum_gm_vol": 0.0551068942960444,
+                "cerebellum_wm_vol": 1.555895359759674,
+                "brainstem_vol": 1.3022340884317891
+            },
+            {
+                "total_vol": 1.4854848334419,
+                "surrounding_csf_vol": -2.0497994293601685,
+                "cortical_gm_vol": 1.9415313952135247,
+                "cerebral_wm_vol": 1.567299159349017,
+                "lateral_ventricles_vol": -1.3275278782842683,
+                "third_ventricle_vol": -1.860135053737323,
+                "fourth_ventricle_vol": -1.1977519020633849,
+                "thalamus_vol": 2.989715326892044,
+                "hippocampus_vol": 1.403915281102066,
+                "amygdala_vol": 0.5939071253341124,
+                "putamen_vol": 1.385425703323832,
+                "pallidum_vol": 0.9744005200836212,
+                "caudate_vol": 1.3271653876891163,
+                "accumbens_area_vol": 2.5453287518813315,
+                "ventral_dc_vol": 2.0300189345784534,
+                "cerebellum_gm_vol": 1.091928358291406,
+                "cerebellum_wm_vol": 0.0648462294250289,
+                "brainstem_vol": 0.5148045091794932
+            },
+            {
+                "total_vol": 1.4266227830948872,
+                "surrounding_csf_vol": -1.530928757418777,
+                "cortical_gm_vol": 1.2343827160163328,
+                "cerebral_wm_vol": 2.073785099840236,
+                "lateral_ventricles_vol": -1.480174893704138,
+                "third_ventricle_vol": -1.8375780247238096,
+                "fourth_ventricle_vol": -0.3201138036807277,
+                "thalamus_vol": 1.142996672696768,
+                "hippocampus_vol": 1.0974484084934304,
+                "amygdala_vol": 0.4352734940036609,
+                "putamen_vol": -0.4420842390692102,
+                "pallidum_vol": -0.831864260833953,
+                "caudate_vol": -0.8300758582823609,
+                "accumbens_area_vol": 0.7760482128823849,
+                "ventral_dc_vol": 0.2052607590938482,
+                "cerebellum_gm_vol": 1.2528709550574897,
+                "cerebellum_wm_vol": 1.3908003563591025,
+                "brainstem_vol": -1.319333827438268
+            }
+        ],
+        "val_conditions_metadata_list": [
+            {
+                "id": "ADNI177S6409",
+                "session_id": "m024",
+                "age": -1.8995041821422576,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "ADNI002S0619",
+                "session_id": "m024",
+                "age": 0.7261798370518662,
+                "split": "train",
+                "dx": 2
+            },
+            {
+                "id": "ADNI177S6409",
+                "session_id": "m000",
+                "age": -2.184726614580705,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "AIBL395",
+                "session_id": "m000",
+                "age": -0.7244969365465502,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "AIBL1066",
+                "session_id": "m000",
+                "age": -2.0891975702233303,
+                "split": "train",
+                "dx": 2
+            },
+            {
+                "id": "AIBL501",
+                "session_id": "m000",
+                "age": -0.8609669999142282,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "ADNI168S6151",
+                "session_id": "m000",
+                "age": -1.2567301836804952,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "ADNI037S4028",
+                "session_id": "m000",
+                "age": -1.4750822850687793,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "OAS30304",
+                "session_id": "m000",
+                "age": -0.7572497517547923,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "ADNI305S6313",
+                "session_id": "m000",
+                "age": -2.075550563886562,
+                "split": "train",
+                "dx": 0
+            },
+            {
+                "id": "AIBL1050",
+                "session_id": "m000",
+                "age": -1.2703771900172622,
+                "split": "train",
+                "dx": 0
+            }
+        ]
+    },
+    "networks_config": {
+        "autoencoder_def": {
+            "_target_": "monai.apps.generation.maisi.networks.autoencoderkl_maisi.AutoencoderKlMaisi",
+            "spatial_dims": 3,
+            "in_channels": 1,
+            "out_channels": 1,
+            "latent_channels": 4,
+            "num_channels": [
+                64,
+                128,
+                256
+            ],
+            "num_res_blocks": [
+                2,
+                2,
+                2
+            ],
+            "norm_num_groups": 32,
+            "norm_eps": 1e-06,
+            "attention_levels": [
+                false,
+                false,
+                false
+            ],
+            "with_encoder_nonlocal_attn": false,
+            "with_decoder_nonlocal_attn": false,
+            "use_checkpointing": false,
+            "use_convtranspose": false,
+            "norm_float16": true,
+            "num_splits": 8,
+            "dim_split": 1
+        },
+        "diffusion_unet_def": {
+            "_target_": "monai.apps.generation.maisi.networks.diffusion_model_unet_maisi.DiffusionModelUNetMaisi",
+            "spatial_dims": 3,
+            "in_channels": 4,
+            "out_channels": 4,
+            "num_res_blocks": 2,
+            "num_channels": [
+                64,
+                128,
+                256,
+                512
+            ],
+            "self_attention_levels": [
+                false,
+                false,
+                true,
+                true
+            ],
+            "num_self_head_channels": [
+                0,
+                0,
+                32,
+                32
+            ],
+            "cross_attention_levels": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "num_cross_head_channels": [
+                32,
+                32,
+                32,
+                32
+            ],
+            "use_flash_attention": true,
+            "with_conditioning": true,
+            "cross_attention_dim": 512,
+            "transformer_num_layers": 1,
+            "upcast_attention": true
+        },
+        "noise_scheduler": {
+            "_target_": "monai.networks.schedulers.DDIMScheduler",
+            "beta_start": 0.0015,
+            "beta_end": 0.0205,
+            "num_train_timesteps": 1000,
+            "schedule": "scaled_linear_beta",
+            "clip_sample": false
+        },
+        "noise_scheduler_rf": {
+            "_target_": "monai.networks.schedulers.rectified_flow.RFlowScheduler",
+            "num_train_timesteps": 1000,
+            "use_discrete_timesteps": false,
+            "use_timestep_transform": true,
+            "sample_method": "uniform",
+            "scale": 1.4
+        },
+        "conditions_model": {
+            "num_conditions": 18,
+            "embed_dim": 512,
+            "hidden_dim": [
+                128,
+                256
+            ],
+            "use_self_attention": false,
+            "n_heads": 8,
+            "n_att_layers": 1,
+            "use_gelu": true
+        }
+    }
+}

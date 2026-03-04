@@ -1,0 +1,20 @@
+{
+    "total_vol": 1922505,
+    "surrounding_csf_vol": 366472,
+    "cortical_gm_vol": 650995,
+    "cerebral_wm_vol": 552017,
+    "lateral_ventricles_vol": 118443,
+    "third_ventricle_vol": 2921,
+    "fourth_ventricle_vol": 2154,
+    "thalamus_vol": 13807,
+    "hippocampus_vol": 7466,
+    "amygdala_vol": 3307,
+    "putamen_vol": 10254,
+    "pallidum_vol": 3223,
+    "caudate_vol": 9393,
+    "accumbens_area_vol": 1280,
+    "ventral_dc_vol": 8612,
+    "cerebellum_gm_vol": 111064,
+    "cerebellum_wm_vol": 29938,
+    "brainstem_vol": 25448
+}
