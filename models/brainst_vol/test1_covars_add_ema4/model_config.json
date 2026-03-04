@@ -2,7 +2,7 @@
     "args_train": {
 
         "model_name": "test1_covars_add_ema4",
-        "model_best_chk_path_name": "/home/agustin/phd/synthesis/final_code/models/brainst_vol/test1_covars_add_ema4/check_points/model_2000.pt",
+        "model_best_chk_path_name": "/home/agustin/phd/BrainST/models/brainst_vol/test1_covars_add_ema4/check_points/model_2000.pt",
 
 
 

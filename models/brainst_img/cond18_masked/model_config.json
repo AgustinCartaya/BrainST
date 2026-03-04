@@ -3,8 +3,7 @@
     "args_train": {
 
         "model_name": "cond18_masked",
-        "autoencoder_chk_path_name":"/home/agustin/phd/synthesis/final_code/models/brainst_img/autoencoder/weights/autoencoder_epoch273.pt",
-        "model_best_chk_path_name": "/home/agustin/phd/synthesis/final_code/models/brainst_img/cond18_masked/check_points/model_200000.pt",
+        "model_best_chk_path_name": "/home/agustin/phd/BrainST/models/brainst_img/cond18_masked/check_points/model_200000.pt",
 
 
 

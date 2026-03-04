@@ -4,18 +4,6 @@ import os
 import numpy as np
 import pandas as pd
 import json
-# from tqdm import tqdm
-# import nibabel as nib
-
-
-# import utils.nifti_functions as nfc
-# import utils.util as util
-# import utils.data_normalization as data_normalization
-
-# import evaluation.arppoaches.our.src.instantiate_models import instantiate_model_and_load
-# import evaluation.arppoaches.our.src.load_data import get_test_ids, load_timepoint_data
-# import evaluation.arppoaches.our.src.null_inversion import invert_latents
-# import evaluation.arppoaches.our.src.generate_image import recover_image_from_noisy_latents
 
 import src.utils.functions as fc
 import src.utils.nifti_functions as nfc
@@ -138,7 +126,6 @@ def brainst_synthesis(brainst_img_config_path, autoencoder_chk_path, output_path
     recon_img = brainst_img_synthesis(brainst_img, target_roi_volumes_dict, seed=seed)
     
     # 3 save the reconstructed image
-    # output_path_name = os.path.join(output_path, "synthetic_image.nii.gz")
     nfc.save_nifti(recon_img, output_path_name)
 
     
@@ -274,106 +261,4 @@ def brainst_transformation(image_path, segmentation_path, brainst_img_config_pat
     recon_img = prep_images.postprocess_image(recon_img, org_shape)
     
     # 4. save the transformed image
-    # output_path_name = os.path.join(output_path, "transformed_img.nii.gz")
     nfc.save_nifti(recon_img, output_path_name, affine=affine)
-
-
-
-#  if __name__ == "__main__":
-#      # obtain args
-     
-     
-#      # generation_type = "synthesis" # ["synthesis", "transformation", "longitudinal"]
-#      # if generation_type == "synthesis":
-#         # target_roi_volumes_dict [satndarized, percentage, mm, segmentation]
-#         # or segmentation_path # 
-#         # or target_covariates # [age, sex, dx] = [55, "M", "CN"]
-        
-#     # if generation_type == "transformation":
-#         # image_path
-#         # segmentation_path or synthseg installed
-#         # target_roi_volumes_dict [satndarized, percentage, mm, segmentation]
-#         # or segmentation_path # 
-#         # or inital_covariates and target_covariates # [age, sex, dx] = [55, "M", "CN"]
-        
-#     # if generation_type == "longitudinal":
-#         # image_path
-#         # segmentation_path # or synthseg installed
-#         # inital_covariates and target_age, target_dx
-        
-        
-        
-    
-
-# roi_volumes_dict = {
-#         "total_vol": 0.0,
-#         "surrounding_csf_vol": 0.0,
-#         "cortical_gm_vol": 0.0,
-#         "cerebral_wm_vol": 0.0,
-#         "lateral_ventricles_vol": 0.0,
-#         "third_ventricle_vol": 0.0,
-#         "fourth_ventricle_vol": 0.0,
-#         "thalamus_vol": 0.0,
-#         "hippocampus_vol": 0.0,
-#         "amygdala_vol": 0.0,
-#         "putamen_vol": 0.0,
-#         "pallidum_vol": 0.0,
-#         "caudate_vol": 0.0,
-#         "accumbens_area_vol": 0.0,
-#         "ventral_dc_vol": 0.0,
-#         "cerebellum_gm_vol": 0.0,
-#         "cerebellum_wm_vol": 0.0,
-#         "brainstem_vol": 0.0
-#     }
-
-# # target_covariates_dict = { # age shoudl be stadarized, sex should be 0 or 1, dx should be 0 1 or 2
-# #     "age": 5.0,
-# #     "sex": 1,
-# #     "dx": 0
-# # }
-
-
-# covariates_from_dict = { # age shoudl be stadarized, sex should be 0 or 1, dx should be 0 1 or 2
-#     "age": 55,
-#     "sex": "M",
-#     "dx": "CN"
-# }
-
-# covariates_to_dict = { # age shoudl be stadarized, sex should be 0 or 1, dx should be 0 1 or 2
-#     "age": 90,
-#     "sex": "M",
-#     "dx": "AD"
-# }
-
-# brainst_img_config_path = "/home/agustin/phd/synthesis/final_code/models/brainst_img/cond18_masked/model_config.json"   
-# brainst_vol_config_path = "/home/agustin/phd/synthesis/final_code/models/brainst_vol/test1_covars_add_ema4/model_config.json"   
-# output_path = "/home/agustin/phd/synthesis/final_code/outputs"
-# # brainst_img_synthesis(roi_volumes_dict, 
-# #                       brainst_img_config_path, 
-# #                       None, 
-# #                       output_path)
-
-
-# # brainst_synthesis(target_covariates_dict, 
-# #                       brainst_img_config_path, 
-# #                       brainst_vol_config_path, 
-# #                       output_path)
-
-
-# image_path="/home/agustin/phd/synthesis/data/MNI_template/usrl/mni_icbm152_t1synthsr_tal_nlin_sym_09a.nii.gz"
-# segmentation_path="/home/agustin/phd/synthesis/data/MNI_template/usrl/mni_icbm152_synthseg_tal_nlin_sym_09a.nii.gz"
-# # brainst_transformation(image_path,
-# #                       target_roi_volumes_dict=roi_volumes_dict,
-# #                       brainst_img_config_path=brainst_img_config_path,
-# #                       brainst_vol_config_path=brainst_vol_config_path,
-# #                       output_path=output_path,
-# #                         segmentation_path=segmentation_path)
-
-
-# brainst_transformation(image_path,
-#                       initial_covariates_dict=covariates_from_dict,
-#                       target_covariates_dict=covariates_to_dict,
-#                       brainst_img_config_path=brainst_img_config_path,
-#                       brainst_vol_config_path=brainst_vol_config_path,
-#                       output_path=output_path,
-#                         segmentation_path=segmentation_path)

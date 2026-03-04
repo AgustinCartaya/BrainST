@@ -20,12 +20,14 @@ TESTS_TEMP_PATH = os.path.join(TESTS_PATH, "temp")
 
 AUTOENCODER_CHK_PATH = os.path.join(CURRENT_PATH, "models", "autoencoder", "weights", "autoencoder_epoch273.pt")
 
+NORMALIZER_PARAMS = os.path.join(CURRENT_PATH, "src", "preprocessing", "normalizer_params.json")
+
 # --------------- Synthesis examples ------------------
 # python main_generation.py \
 #     --generation_type synthesis \
 #     --brainst_img_config_path ./models/brainst_img/cond18_masked/model_config.json \
 #     --target_roi_volumes_path ./tests/inputs/target_vol_standardized.json \
-#     --diffusion_steps 200
+#     --diffusion_steps 50
 
 # python main_generation.py \
 #     --generation_type synthesis \
@@ -292,8 +294,7 @@ def main():
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    normalizer_params = "/home/agustin/phd/synthesis/final_code/src/preprocessing/normalizer_params.json"
-    normalizer = data_normalization.SavedNormalizerBrainStructures(normalizer_params)
+    normalizer = data_normalization.SavedNormalizerBrainStructures(NORMALIZER_PARAMS)
 
     
     if args.target_roi_volumes_path is None and args.brainst_vol_config_path is None:
