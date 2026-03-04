@@ -1,5 +1,4 @@
-./generation_res.py
-./tests.ipynb
+ignore/
 
 # Ignorar imágenes y datos volumétricos
 *.png

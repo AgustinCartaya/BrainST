@@ -1,4 +1,4 @@
-# BrainST: Anatomically Controlled Brain MRI Synthesis and Longitudinal Prediction
+# BrainST: Structural Volume–Guided Diffusion Modelling for Counterfactual Brain MRI and Longitudinal Prediction
 
 BrainST is a diffusion-based framework for the **controlled synthesis, anatomical transformation, and longitudinal prediction of T1-weighted brain MRI**, trained entirely on cross-sectional data. It enables fine-grained, region-specific control by conditioning image generation on volumetric measurements of **18 brain regions of interest (ROIs)**, while preserving anatomical plausibility through a conditioning alignment penalty.
 
@@ -20,9 +20,14 @@ git clone https://github.com/AgustinCartaya/BrainST.git
 cd BrainST
 
 # (Optional) Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+conda create --name BrainST python=3.11
+conda deactivate
+conda activate BrainST
 
 # Install required packages
-pip install -r requirements.txt
+pip install torch torchvision monai tensorboard ipykernel tqdm matplotlib opencv-python pandas nibabel scikit-image scikit-learn SimpleITK ipympl
+
+
+
+
+
