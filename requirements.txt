@@ -1,0 +1,33 @@
+# Core deep learning
+# torch
+# torchvision
+einops
+monai
+
+# Numerical / scientific computing
+numpy
+scipy
+pandas
+scikit-learn
+scikit-image
+
+# Medical imaging I/O and processing
+nibabel
+SimpleITK
+
+# Visualization / logging
+matplotlib
+tensorboard
+opencv-python
+
+# Notebook support (brain_concert demo)
+ipykernel
+ipympl
+ipynbname
+
+# Audio / video generation (brain_concert demo)
+pydub
+moviepy
+
+# Utilities
+tqdm

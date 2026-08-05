@@ -1,0 +1,3 @@
+subject_id,session_id,total_vol,surrounding_csf_vol,cortical_gm_vol,cerebral_wm_vol,lateral_ventricles_vol,third_ventricle_vol,fourth_ventricle_vol,thalamus_vol,hippocampus_vol,amygdala_vol,putamen_vol,pallidum_vol,caudate_vol,accumbens_area_vol,ventral_dc_vol,cerebellum_gm_vol,cerebellum_wm_vol,brainstem_vol
+ADNI002S0295,m000,2038147,388269,696874,609302,48771,2696,1836,16853,10541,5290,13585,4484,9223,1484,12128,146090,37626,30771
+NACC000225,m000,1982453,413463,685766,581895,36695,2321,1753,15599,10551,4624,14282,4325,10300,1723,11093,125643,30570,29779

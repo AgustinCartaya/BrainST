@@ -1,0 +1,20 @@
+{
+    "total_vol": 0.0,
+    "surrounding_csf_vol": 0.0,
+    "cortical_gm_vol": 0.0,
+    "cerebral_wm_vol": 0.0,
+    "lateral_ventricles_vol": 0.0,
+    "third_ventricle_vol": 0.0,
+    "fourth_ventricle_vol": 0.0,
+    "thalamus_vol": 0.0,
+    "hippocampus_vol": 0.0,
+    "amygdala_vol": 0.0,
+    "putamen_vol": 0.0,
+    "pallidum_vol": 0.0,
+    "caudate_vol": 0.0,
+    "accumbens_area_vol": 0.0,
+    "ventral_dc_vol": 0.0,
+    "cerebellum_gm_vol": 0.0,
+    "cerebellum_wm_vol": 0.0,
+    "brainstem_vol": 0.0
+}

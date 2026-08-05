@@ -1,0 +1,52 @@
+# Ignore image data
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.wav
+*.npy
+*.npz
+*.zip
+*.lta
+*.git
+*.nii.gz
+*.nii
+
+
+# Ignore model weights
+*.safetensors
+*.pkl
+*.bin
+*.pt
+*.h5
+*.pth
+*.ckpt
+*events.out.tfevents*
+
+# Ignore visual studio
+*.pyc
+__pycache__
+
+# Ignore specific folders and files
+__temp__
+tutorials/intro_video_components/data
+tutorials/intro_video_components/generate_extra_components_notes.ipynb
+models/training
+data/training/example/training_data.csv
+
+# Avoid ignoring specific files
+!data/generation/inputs/basal_image.nii.gz
+!data/generation/inputs/basal_segmentation.nii.gz
+!data/generation/inputs/reference_image.nii.gz
+!data/generation/inputs/reference_segmentation.nii.gz
+
+
+!tutorials/brain_concert/data/outputs/concert_videos/ode_to_joy.mp4
+!tutorials/brain_concert/data/outputs/concert_videos/fur_elise.mp4
+!tutorials/brain_concert/data/outputs/concert_videos/note_test.mp4
+
+!brainst_intro.gif
+
+
+

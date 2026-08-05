@@ -1,0 +1,32 @@
+{
+    "diffusion_mlp": {
+        "d_in": 18,
+        "dim_t": 512,
+        "conditioning_type": "add",
+        "num_heads": 4,
+        "merge_conditioning_with": "x"
+    },
+    "conditions_mlp": {
+        "covar_dimension": 5,
+        "dim_t": 512,
+        "covar_embed_dim": 128,
+        "conditioning_type": "add"
+    },
+    "noise_scheduler": {
+        "_target_": "monai.networks.schedulers.DDIMScheduler",
+        "beta_start": 0.0015,
+        "beta_end": 0.0205,
+        "num_train_timesteps": 1000,
+        "schedule": "scaled_linear_beta",
+        "clip_sample": false
+    },
+    "noise_scheduler_rf": {
+        "_target_": "monai.networks.schedulers.rectified_flow.RFlowScheduler",
+        "num_train_timesteps": 1000,
+        "use_discrete_timesteps": false,
+        "use_timestep_transform": true,
+        "sample_method": "uniform",
+        "scale": 1.4
+    }
+
+}
