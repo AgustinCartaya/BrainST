@@ -123,8 +123,7 @@ models/
 └── normalization/
     └── zscore_standardizer_params.json
 ```
-
-> **TODO:** Add a download link / release for the pretrained checkpoints once they are published. Until then, checkpoints must be produced locally using the [training](#2-training) scripts described below.
+> **Pretrained Model Weights:** The pretrained model weights can be downloaded from the following Google Drive folder: [weights](https://drive.google.com/drive/folders/1nNO6Hh2B1yLD_62Ilt9z2XOZ1v6O-L--?usp=drive_link)
 
 ---
 

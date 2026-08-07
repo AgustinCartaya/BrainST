@@ -1,0 +1,1 @@
+Follow the instructions in the Pretrained Models section of https://github.com/AgustinCartaya/BrainST to download the weights, then copy them into this directory.

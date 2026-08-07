@@ -30,6 +30,7 @@ __pycache__
 
 # Ignore specific folders and files
 __temp__
+__ignore__
 tutorials/intro_video_components/data
 tutorials/intro_video_components/generate_extra_components_notes.ipynb
 models/training
