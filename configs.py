@@ -149,7 +149,7 @@ STRUCTURE_INDEX_VOL_DICT = {name: index for name, index in zip(STRUCTURE_NAME_LI
 PATH_MODELS = os.path.join(PATH_BASE, "models")
 
 PATH_MODELS_ARCHITECTURES = os.path.join(PATH_MODELS, "architectures")
-PATH_AUTOENCODER_ARCHITECTURE = os.path.join(PATH_MODELS_ARCHITECTURES, "autoencoder.pt")
+PATH_AUTOENCODER_ARCHITECTURE = os.path.join(PATH_MODELS_ARCHITECTURES, "autoencoder.json")
 PATH_BRAINST_IMG_ARCHITECTURE = os.path.join(PATH_MODELS_ARCHITECTURES, "brainst_img.json")
 PATH_BRAINST_VOL_ARCHITECTURE = os.path.join(PATH_MODELS_ARCHITECTURES, "brainst_vol.json")
 

@@ -1,33 +1,33 @@
 # Core deep learning
-# torch
-# torchvision
-einops
-monai
+# torch==2.13.0+cu129
+# torchvision==0.28.0+cu129
+einops==0.8.2
+monai==1.6.0
 
 # Numerical / scientific computing
-numpy
-scipy
-pandas
-scikit-learn
-scikit-image
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.5
+scikit-learn==1.9.0
+scikit-image==0.26.0
 
 # Medical imaging I/O and processing
-nibabel
-SimpleITK
+nibabel==5.4.2
+simpleitk==2.5.6
 
 # Visualization / logging
-matplotlib
-tensorboard
-opencv-python
+matplotlib==3.11.1
+tensorboard==2.21.0
+opencv-python==5.0.0.93
 
 # Notebook support (brain_concert demo)
-ipykernel
-ipympl
-ipynbname
+ipykernel==7.3.0
+ipympl==0.10.0
+ipynbname==2025.8.0.0
 
 # Audio / video generation (brain_concert demo)
-pydub
-moviepy
+pydub==0.25.1
+moviepy==2.2.1
 
 # Utilities
-tqdm
+tqdm==4.70.0

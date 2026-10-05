@@ -640,7 +640,7 @@ def multi_inference_from_noise(unet: torch.nn.Module, conditions_model: torch.nn
         x_rec_norm = diffusion_loop(rand_noise, unet, conditions_model, noise_scheduler, covars, free_guidance_ratio=fgr)
         # x_rec_norm = diffusion_loop_with_stochastic_refinement(rand_noise, model["unet"],model["conditions_model"], model["noise_scheduler"], covars, free_guidance_ratio=fgr, num_trials=5, noise_scale=.0001)
 
-        x_rec_norm = x_rec_norm.cpu().numpy()
+        # x_rec_norm = x_rec_norm.cpu().numpy()
         x_rec_norm_list.append(x_rec_norm)
         if verbose:
             bar.update(1)
@@ -1875,7 +1875,7 @@ args_train = {
                         {"age": 85, "sex": 0, "dx": 0}, {"age": 85, "sex": 0, "dx": 1}, {"age": 85, "sex": 0, "dx": 2},
                         {"age": 90, "sex": 0, "dx": 0}, {"age": 90, "sex": 0, "dx": 1}, {"age": 90, "sex": 0, "dx": 2},
                         ],
-    "val_nb_reconstruction_samples": 250,
+    "val_nb_reconstruction_samples": 5,
     # ---- early stopping
     "patience": 10,
 
